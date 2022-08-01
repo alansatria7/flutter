@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_2/SecondPage.dart';
 
 class fromRegistration extends StatefulWidget {
   const fromRegistration({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _fromRegistration extends State<fromRegistration> {
   TextEditingController ctrUsername = new TextEditingController();
   TextEditingController ctrPassword = new TextEditingController();
   int id = 1;
+  String myPhone= "-";
 
 
   @override
@@ -66,6 +68,24 @@ class _fromRegistration extends State<fromRegistration> {
               Text("Female")
 
             ],),
+
+            Text("Phone : "+myPhone),
+            ElevatedButton(onPressed: () async {
+              final result = await Navigator.push( 
+                context,
+                MaterialPageRoute(builder: ((context) => const SecondPage())),
+                
+                );
+
+                print("hasil input phone : "+result.toString());
+                setState(() {
+                  myPhone = result.toString();
+                });
+
+            },child: Text("Phone Number")),
+            SizedBox(
+              height: 20,),
+           
             Center(
               child: Container(
                 width: 200,

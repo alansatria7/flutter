@@ -21,13 +21,15 @@ class _kalkulatorState extends State<kalkulator> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-       appBar: AppBar(title: Text("perhitunganBangunDatar"),),
+       appBar: AppBar(title: Text("PesrsegiPanjang"),),
       body: Container(
-        margin:EdgeInsets.all(10),
+        margin:EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:[
+            
             TextField(
+             
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               controller: ctrPanjang,
